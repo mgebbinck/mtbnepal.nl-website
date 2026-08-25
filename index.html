@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Fietsreizen in Nepal — MTB &amp; Gravel Nepal</title>
+<meta name="description" content="Volledig verzorgde mountainbike- en gravelreizen in Nepal. Culturele MTB-reis rondom de Kathmandu vallei en de exclusieve gravel expeditie naar Upper Mustang.">
+<style>
+:root{
+  --bg:#ffffff;
+  --bg-alt:#f5f4f1;
+  --bg-deep:#0f1a24;
+  --surface:#ffffff;
+  --surface-alt:#f0efeb;
+  --text:#16212b;
+  --text-soft:#54626f;
+  --text-invert:#f6f8fa;
+  --text-invert-soft:#b6c4d1;
+  --brand:#d1552b;
+  --brand-soft:#f3d9cd;
+  --brand-deep:#a63d1a;
+  --accent:#1f6f6a;
+  --line:#e2e0da;
+  --line-invert:rgba(255,255,255,.16);
+  --shadow:0 1px 2px rgba(16,33,45,.06), 0 12px 32px -12px rgba(16,33,45,.18);
+  --shadow-lg:0 24px 60px -24px rgba(16,33,45,.35);
+  --radius:18px;
+  --radius-sm:12px;
+  --maxw:1140px;
+  --font:"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d151d;
+    --bg-alt:#111c25;
+    --bg-deep:#070d13;
+    --surface:#152029;
+    --surface-alt:#1b2833;
+    --text:#eaf1f7;
+    --text-soft:#a3b3c1;
+    --text-invert:#f6f8fa;
+    --text-invert-soft:#b6c4d1;
+    --brand:#f0764a;
+    --brand-soft:#3a2119;
+    --brand-deep:#f0764a;
+    --accent:#4fb3ac;
+    --line:#23323f;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 32px -12px rgba(0,0,0,.6);
+    --shadow-lg:0 24px 60px -24px rgba(0,0,0,.75);
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-block-start:84px}
+body{
+  margin:0;
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{line-height:1.15;margin:0 0 .5em;letter-spacing:-.02em;font-weight:700}
+h1{font-size:clamp(2.4rem,6vw,4.2rem)}
+h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}
+h3{font-size:1.22rem}
+p{margin:0 0 1.1em}
+.wrap{width:min(100% - 2.5rem,var(--maxw));margin-inline:auto}
+.section{padding-block:clamp(3.5rem,7vw,6.5rem)}
+.section--alt{background:var(--bg-alt)}
+.eyebrow{
+  display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--brand);margin-block-end:.9rem;
+}
+.lead{font-size:1.14rem;color:var(--text-soft);max-width:64ch}
+.section-head{max-width:70ch;margin-block-end:2.6rem}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;inset-block-start:0;z-index:50;
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(14px);
+  border-block-end:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;gap:1.5rem;min-block-size:68px}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;font-weight:700;letter-spacing:-.02em}
+.brand .mark{
+  inline-size:34px;block-size:34px;border-radius:10px;flex:none;
+  background:linear-gradient(140deg,var(--brand),var(--accent));
+  display:grid;place-items:center;color:#fff;
+}
+.brand span small{display:block;font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-soft);line-height:1}
+.nav-links{display:flex;gap:.25rem;margin-inline-start:auto;align-items:center}
+.nav-links a{
+  text-decoration:none;font-size:.95rem;font-weight:600;color:var(--text-soft);
+  padding:.5rem .8rem;border-radius:999px;transition:color .15s,background .15s;
+}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--text);background:var(--surface-alt)}
+.nav-links a.cta{background:var(--brand);color:#fff;padding-inline:1.15rem}
+.nav-links a.cta:hover{background:var(--brand-deep);color:#fff}
+.nav-toggle,.nav-toggle-label{display:none}
+
+@media (max-width:900px){
+  .nav-toggle-label{
+    display:grid;place-items:center;margin-inline-start:auto;
+    inline-size:44px;block-size:44px;border-radius:12px;cursor:pointer;
+    border:1px solid var(--line);background:var(--surface);
+  }
+  .nav-toggle-label span{display:block;inline-size:20px;block-size:2px;background:var(--text);position:relative}
+  .nav-toggle-label span::before,.nav-toggle-label span::after{
+    content:"";position:absolute;inset-inline-start:0;inline-size:20px;block-size:2px;background:var(--text);
+  }
+  .nav-toggle-label span::before{inset-block-start:-6px}
+  .nav-toggle-label span::after{inset-block-start:6px}
+  .nav-links{
+    position:absolute;inset-inline:0;inset-block-start:100%;
+    flex-direction:column;align-items:stretch;gap:.15rem;
+    background:var(--bg);border-block-end:1px solid var(--line);
+    padding:.8rem 1.25rem 1.4rem;box-shadow:var(--shadow);
+    display:none;
+  }
+  .nav-toggle:checked ~ .nav-links{display:flex}
+  .nav-links a{padding:.75rem .9rem;font-size:1rem}
+  .nav-links a.cta{text-align:center;margin-block-start:.4rem}
+  .nav{position:relative}
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;overflow:hidden;color:var(--text-invert);
+  background:
+    radial-gradient(120% 90% at 78% 8%,rgba(209,85,43,.42),transparent 58%),
+    radial-gradient(100% 80% at 8% 92%,rgba(31,111,106,.45),transparent 60%),
+    linear-gradient(175deg,#122232 0%,#0b141d 62%,#070d13 100%);
+}
+.hero__inner{padding-block:clamp(4.5rem,11vw,8.5rem) clamp(9rem,16vw,13rem);position:relative;z-index:2}
+.hero h1{max-width:16ch;margin-block-end:1.1rem}
+.hero h1 em{font-style:normal;color:var(--brand);display:block}
+.hero p{color:var(--text-invert-soft);font-size:1.2rem;max-width:56ch}
+.hero__badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-block-end:1.6rem}
+.badge{
+  display:inline-flex;align-items:center;gap:.45rem;font-size:.8rem;font-weight:600;
+  padding:.4rem .85rem;border-radius:999px;
+  border:1px solid var(--line-invert);background:rgba(255,255,255,.07);color:var(--text-invert);
+}
+.badge.is-live{background:rgba(209,85,43,.22);border-color:rgba(240,118,74,.5)}
+.dot{inline-size:7px;block-size:7px;border-radius:50%;background:var(--brand);flex:none}
+.btn-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-block-start:2rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;
+  font-weight:650;font-size:1rem;padding:.85rem 1.5rem;border-radius:999px;
+  transition:transform .15s,background .15s,border-color .15s;border:1px solid transparent;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn--primary{background:var(--brand);color:#fff}
+.btn--primary:hover{background:var(--brand-deep)}
+.btn--ghost{border-color:var(--line-invert);color:var(--text-invert);background:rgba(255,255,255,.05)}
+.btn--dark{background:var(--text);color:var(--bg)}
+.hero__range{
+  position:absolute;inset-inline:0;inset-block-end:-1px;z-index:1;
+  block-size:auto;opacity:.85;
+}
+.hero__stats{
+  position:relative;z-index:3;margin-block-start:-4.5rem;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow-lg);
+}
+.hero__stats div{background:var(--surface);padding:1.35rem 1.5rem}
+.hero__stats strong{display:block;font-size:1.85rem;letter-spacing:-.03em;line-height:1.1}
+.hero__stats span{font-size:.85rem;color:var(--text-soft)}
+
+/* ---------- Trips ---------- */
+.trip{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);
+  gap:clamp(1.5rem,4vw,3.5rem);align-items:start;
+}
+.trip + .trip{margin-block-start:clamp(3rem,6vw,5rem);padding-block-start:clamp(3rem,6vw,5rem);border-block-start:1px solid var(--line)}
+.trip__visual{
+  border-radius:var(--radius);overflow:hidden;position:sticky;inset-block-start:96px;
+  box-shadow:var(--shadow);border:1px solid var(--line);
+}
+.trip__visual figcaption{
+  padding:.85rem 1.1rem;font-size:.85rem;color:var(--text-soft);background:var(--surface);
+  border-block-start:1px solid var(--line);
+}
+.tag{
+  display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:.3rem .7rem;border-radius:999px;background:var(--brand-soft);color:var(--brand-deep);
+}
+.tag--calm{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent)}
+.checks{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.9rem}
+.checks li{display:grid;grid-template-columns:26px 1fr;gap:.8rem;align-items:start}
+.checks li::before{
+  content:"";inline-size:20px;block-size:20px;margin-block-start:.28rem;border-radius:50%;
+  background:var(--brand-soft);
+  box-shadow:inset 0 0 0 2px var(--brand);
+}
+.checks strong{display:block}
+.checks span{color:var(--text-soft);font-size:.97rem}
+
+/* ---------- Cards / grid ---------- */
+.grid{display:grid;gap:1.25rem}
+.grid--3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid--2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.6rem;box-shadow:var(--shadow);
+}
+.card h3{margin-block-end:.4rem}
+.card p:last-child{margin-block-end:0}
+
+/* ---------- Dates ---------- */
+.dates{display:grid;gap:1rem}
+.date-card{
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1.4rem;align-items:center;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.3rem 1.6rem;box-shadow:var(--shadow);
+}
+.date-card__when{
+  min-inline-size:170px;font-weight:700;letter-spacing:-.01em;
+}
+.date-card__when small{display:block;font-weight:600;color:var(--text-soft);letter-spacing:0}
+.date-card h3{margin:0;font-size:1.05rem}
+.date-card p{margin:.2rem 0 0;color:var(--text-soft);font-size:.93rem}
+.status{
+  white-space:nowrap;font-size:.78rem;font-weight:700;padding:.35rem .8rem;border-radius:999px;
+  background:var(--surface-alt);color:var(--text-soft);
+}
+.status--go{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+@media (max-width:760px){
+  .date-card{grid-template-columns:1fr;gap:.6rem}
+  .trip{grid-template-columns:1fr}
+  .trip__visual{position:static}
+}
+
+/* ---------- Quotes ---------- */
+.quotes{columns:3 280px;column-gap:1.25rem}
+.quote{
+  break-inside:avoid;margin-block-end:1.25rem;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem 1.5rem;box-shadow:var(--shadow);
+}
+.quote p{font-size:1rem;margin-block-end:.9rem}
+.quote footer{display:flex;align-items:center;gap:.65rem;font-size:.88rem;color:var(--text-soft)}
+.avatar{
+  inline-size:32px;block-size:32px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-size:.8rem;font-weight:700;color:#fff;background:linear-gradient(140deg,var(--brand),var(--accent));
+}
+
+/* ---------- About ---------- */
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem;box-shadow:var(--shadow)}
+.person__top{display:flex;align-items:center;gap:1rem;margin-block-end:1rem}
+.person__top .avatar{inline-size:52px;block-size:52px;font-size:1.15rem}
+.person__top h3{margin:0}
+.person__top small{color:var(--text-soft)}
+
+/* ---------- Contact ---------- */
+.contact{
+  background:var(--bg-deep);color:var(--text-invert);border-radius:calc(var(--radius) + 6px);
+  padding:clamp(2rem,5vw,3.5rem);display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem;
+}
+.contact h2{color:var(--text-invert)}
+.contact p{color:var(--text-invert-soft)}
+.contact a{color:var(--text-invert);text-decoration:none;border-block-end:1px solid rgba(255,255,255,.3)}
+.contact a:hover{border-color:var(--brand)}
+.contact dl{margin:0;display:grid;gap:1rem}
+.contact dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-invert-soft);font-weight:700}
+.contact dd{margin:.15rem 0 0;font-size:1.05rem}
+.social{display:flex;flex-wrap:wrap;gap:.5rem;margin-block-start:1.4rem}
+.social a{
+  border:1px solid var(--line-invert);border-radius:999px;padding:.4rem .9rem;
+  font-size:.85rem;font-weight:600;background:rgba(255,255,255,.06);
+}
+
+/* ---------- Footer ---------- */
+.site-footer{border-block-start:1px solid var(--line);padding-block:2.5rem;font-size:.9rem;color:var(--text-soft)}
+.site-footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+.site-footer a{color:var(--text-soft)}
+
+/* ---------- Print ---------- */
+@media print{
+  .site-header,.hero__range,.btn-row,.social{display:none}
+  body{background:#fff;color:#000;font-size:11pt}
+  .hero{background:#fff;color:#000}
+  .hero p,.contact p{color:#333}
+  .contact{background:#fff;color:#000;border:1px solid #999}
+  .contact h2,.contact dd,.contact a{color:#000}
+  .card,.quote,.date-card,.person{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
+  .quotes{columns:2}
+  .hero__stats{margin-block-start:1rem;box-shadow:none}
+  .trip__visual{position:static}
+  a{text-decoration:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn:hover{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Hoofdnavigatie">
+      <a class="brand" href="#top">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 19h20L14 5l-3.5 6L8 8z"/></svg>
+        </span>
+        <span>MTB &amp; Gravel Nepal<small>Fietsreizen in de Himalaya</small></span>
+      </a>
+      <input class="nav-toggle" type="checkbox" id="nav-toggle">
+      <label class="nav-toggle-label" for="nav-toggle" aria-label="Menu openen of sluiten"><span></span></label>
+      <div class="nav-links">
+        <a href="#reizen">Reizen</a>
+        <a href="#data">Data &amp; prijzen</a>
+        <a href="#conditie">Fitheid</a>
+        <a href="#ervaringen">Ervaringen</a>
+        <a href="#over">Over</a>
+        <a class="cta" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <div class="hero__badges">
+        <span class="badge is-live"><span class="dot"></span> Nov 2026 — gegarandeerd vertrek</span>
+        <span class="badge">Volledig verzorgd</span>
+        <span class="badge">Lokale Nepalese gidsen</span>
+      </div>
+      <h1>Fietsreizen in Nepal<em>MTB &amp; gravel in de Himalaya</em></h1>
+      <p>Twee reizen, ieder met een eigen accent. De culturele mountainbikereis rondom de Kathmandu vallei is toegankelijk. De gravel expeditie naar Upper Mustang is extreem.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="#reizen">Bekijk de reizen</a>
+        <a class="btn btn--ghost" href="#data">Data &amp; interesselijst</a>
+      </div>
+    </div>
+    <svg class="hero__range" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0,150 L120,96 L210,132 L330,54 L430,110 L540,40 L640,104 L760,26 L880,108 L980,70 L1100,124 L1220,60 L1330,116 L1440,80 L1440,220 L0,220 Z" fill="rgba(255,255,255,.06)"/>
+      <path d="M0,178 L150,138 L260,166 L380,110 L500,158 L620,104 L740,152 L860,96 L980,150 L1120,116 L1250,158 L1360,124 L1440,152 L1440,220 L0,220 Z" fill="rgba(255,255,255,.05)"/>
+    </svg>
+  </section>
+
+  <div class="wrap">
+    <div class="hero__stats">
+      <div><strong>2</strong><span>reizen per jaar</span></div>
+      <div><strong>4.080 m</strong><span>hoogste punt op de fiets</span></div>
+      <div><strong>8 van 10</strong><span>hoogste bergtoppen in zicht</span></div>
+      <div><strong>sinds 2022</strong><span>ontwikkeld met lokale experts</span></div>
+    </div>
+  </div>
+
+  <!-- REIZEN -->
+  <section class="section" id="reizen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">De reizen</span>
+        <h2>Kies je avontuur</h2>
+        <p class="lead">Je kunt kiezen uit twee verschillende fietsreizen, ieder met een eigen accent. Beide reizen lopen parallel aan een yogareis van Marion Werger — zo kun je samen met vrienden of je partner naar Nepal reizen, ieder met je eigen accent van yoga of mountainbiken. Maar je kunt ook gewoon alleen of met je fietsvrienden mee.</p>
+      </div>
+
+      <!-- TRIP 1 -->
+      <article class="trip">
+        <figure class="trip__visual" style="margin:0">
+          <svg viewBox="0 0 600 460" role="img" aria-label="Illustratie van heuvels en kloosters rondom de Kathmandu vallei">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#2a6f8f"/><stop offset="55%" stop-color="#5a9bb0"/><stop offset="100%" stop-color="#e8c9a0"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="460" fill="url(#g1)"/>
+            <circle cx="470" cy="86" r="34" fill="#ffe9c4" opacity=".9"/>
+            <path d="M0 250 L90 178 L160 224 L250 150 L330 214 L420 142 L520 210 L600 168 L600 460 L0 460 Z" fill="#1f4f5e" opacity=".85"/>
+            <path d="M0 316 L110 262 L210 306 L320 244 L430 300 L540 256 L600 288 L600 460 L0 460 Z" fill="#173d49"/>
+            <path d="M0 380 L120 344 L240 378 L360 340 L480 376 L600 344 L600 460 L0 460 Z" fill="#12303a"/>
+            <path d="M292 214 l26 -30 l26 30 z" fill="#f4e2c4"/>
+            <rect x="300" y="214" width="36" height="30" fill="#f4e2c4"/>
+            <rect x="314" y="176" width="4" height="16" fill="#f4e2c4"/>
+          </svg>
+          <figcaption>Kathmandu vallei — single tracks, kasseien en gravelpaden</figcaption>
+        </figure>
+
+        <div>
+          <span class="tag tag--calm">Reis 1 · toegankelijk</span>
+          <h2 style="margin-block-start:.8rem">Culturele mountainbike&shy;reis rondom de Kathmandu vallei</h2>
+          <p class="lead">Tien dagen cultuur, natuur, inspiratie en bezinning — waarvan zeven dagen mountainbiken over bergtoppen, door jungle, langs watervallen en bergdorpjes, over single tracks, kasseien en gravelpaden en met glooiende afdalingen.</p>
+          <ul class="checks">
+            <li><span><strong>Uitzicht op acht van de tien hoogste bergtoppen ter wereld</strong><span>Inclusief Mount Everest.</span></span></li>
+            <li><span><strong>Voel en hoor de jungle van Shivapuri National Park</strong><span>Van bergtop tot rivierdal in één dag.</span></span></li>
+            <li><span><strong>De magie van gebedsrituelen in boeddhistische kloosters</strong><span>Slaap waar de monniken hun dag beginnen.</span></span></li>
+            <li><span><strong>Ervaar het lokale leven met de Nepalezen</strong><span>Onderweg, in de dorpjes, aan tafel.</span></span></li>
+            <li><span><strong>Pashupatinath</strong><span>Het belangrijkste Hindoe tempelcomplex van Nepal, met tempeloffers, Saddhu's en crematies aan de oever van de rivier.</span></span></li>
+          </ul>
+          <p style="margin-block-start:1.4rem;color:var(--text-soft)">De reis begint en eindigt met cultuur in Kathmandu, samen met de yogagroep. Als je wil kun je meedoen met de yoga- en meditatiesessies — ook als je daar nog niet bekend mee bent is dat een mooie aanvulling en ondersteuning voor het mountainbiken. Maar alleen mountainbiken met Michel kan natuurlijk ook prima.</p>
+          <div class="btn-row"><a class="btn btn--primary" href="#data">Programma en prijzen</a></div>
+        </div>
+      </article>
+
+      <!-- TRIP 2 -->
+      <article class="trip">
+        <figure class="trip__visual" style="margin:0">
+          <svg viewBox="0 0 600 460" role="img" aria-label="Illustratie van het woestijnlandschap van Upper Mustang">
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#123b62"/><stop offset="45%" stop-color="#4a7fa1"/><stop offset="100%" stop-color="#d9a86c"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="460" fill="url(#g2)"/>
+            <path d="M0 232 L80 120 L140 186 L226 68 L310 176 L392 96 L470 190 L540 130 L600 194 L600 460 L0 460 Z" fill="#eef4f8" opacity=".92"/>
+            <path d="M0 262 L96 196 L200 254 L300 190 L410 250 L520 200 L600 246 L600 460 L0 460 Z" fill="#8a5f3d"/>
+            <path d="M0 322 L110 288 L230 330 L350 286 L470 328 L600 292 L600 460 L0 460 Z" fill="#b07a48"/>
+            <path d="M0 392 L140 366 L280 396 L420 362 L560 394 L600 380 L600 460 L0 460 Z" fill="#8f5c33"/>
+            <rect x="250" y="330" width="90" height="44" fill="#f2e3cd"/>
+            <path d="M244 330 h102 l-8 -14 h-86 z" fill="#d9c6a8"/>
+            <rect x="272" y="348" width="14" height="26" fill="#8f5c33"/>
+          </svg>
+          <figcaption>Upper Mustang — het laatste verboden koninkrijk van de Himalaya</figcaption>
+        </figure>
+
+        <div>
+          <span class="tag">Reis 2 · extreem</span>
+          <h2 style="margin-block-start:.8rem">Exclusieve gravel expeditie Upper Mustang</h2>
+          <p class="lead">13 dagen. Kathmandu naar Lo Manthang en terug — een volledige mountainbike-expeditie door het hooggebergte van Nepal, met een doordachte acclimatisatie-opbouw en een route die je nergens anders ter wereld rijdt.</p>
+          <ul class="checks">
+            <li><span><strong>Legendarische trails in het hart van de Himalaya</strong><span>Fiets door 's werelds diepste kloof, over singletracks en eeuwenoude Tibetaanse handelsroutes die recht op Lo Manthang afstevenen. Ruig, rauw en absoluut adembenemend. Hoewel we op mountainbikes fietsen, is het karakter van de route vergelijkbaar met gravelbiken.</span></span></li>
+            <li><span><strong>8 dagen fietsen op extreme hoogte</strong><span>Je rijdt op 2.600 tot 4.080 meter hoogte, in een grillig woestijn- en bergklimaat, op onverharde trails in een van de meest afgelegen gebieden ter wereld — tot 20 kilometer van de Tibetaanse grens. Dagelijks zo'n 30 tot 70 kilometer met 400 tot 1.500 hoogtemeters en 2,5 tot 6 uur actief op de fiets. Plus 1 dag verkennend fietsen in Kathmandu.</span></span></li>
+            <li><span><strong>Lower &amp; Upper Mustang: de hoogtepunten van Nepal op de fiets</strong><span>Je passeert eeuwenoude bergdorpjes voor je aankomt in Lo Manthang: de ommuurde hoofdstad van het laatste verboden koninkrijk van de Himalaya, waar Tibetaanse cultuur, mystiek en rauwe berglandschappen onaangetast zijn gebleven.</span></span></li>
+            <li><span><strong>Twee dagen in het hart van het Verboden Koninkrijk</strong><span>Een exclusieve kora-rit rondom Lo Manthang langs eeuwenoude kloosters, de mysterieuze Choser-grotten en verborgen dorpen zoals Kimling en Samjong, waar tijd en cultuur stil lijken te hebben gestaan.</span></span></li>
+            <li><span><strong>Slim opgebouwd: bike én jeepsupport</strong><span>Strategische transfers per 4WD zodat je energie bewaart voor de etappes die er toe doen. Voor de sterke rijder: maximale trailkilometers. Voor iedereen: een volgjeep als vangnet op hoogte.</span></span></li>
+            <li><span><strong>Cultuur die je raakt</strong><span>Kloosters vol eeuwenoude fresco's, de Chungshi-grotten van Syangboche, de openbare crematies van Pashupatinath en de boeddhistische monniken bij Azië's grootste stupa in Boudhanath. Dit is niet zomaar een biketocht — dit is een expeditie door een levende beschaving.</span></span></li>
+            <li><span><strong>Verblijf dat past bij de tocht</strong><span>Van het legendarische Kathmandu Guest House, de vulkanische hotsprings van Tatopani en het comfortabele Pokhara Village Resort tot eenvoudige, authentieke teahouses diep in de Mustang. Je slaapt waar de legends en de locals slapen. Dat is de bedoeling.</span></span></li>
+            <li><span><strong>Lokale expertise op alle fronten</strong><span>Ervaren Nepalese gidsen die elk pad kennen, mechanische ondersteuning onderweg en Michel Gebbinck als reisleider. Jij rijdt. Wij regelen de rest.</span></span></li>
+          </ul>
+          <div class="btn-row"><a class="btn btn--primary" href="#data">Programma en prijzen</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- DATA -->
+  <section class="section section--alt" id="data">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Data &amp; prijzen</span>
+        <h2>Wanneer ga je mee?</h2>
+        <p class="lead">Steeds meer mensen plannen hun reis lang van tevoren. Wil je op de interesselijst voor een van de reizen? Laat het ons weten — dan ontvang je als eerste info. Alle details van de reizen vind je in de brochures; vraag ze op via contact.</p>
+      </div>
+
+      <div class="dates">
+        <div class="date-card">
+          <div class="date-card__when">19 – 28 nov 2026<small>10-daagse reis</small></div>
+          <div>
+            <h3>Culturele mountainbike reis rondom de Kathmandu vallei</h3>
+            <p>Minimumaantal deelnemers is bereikt.</p>
+          </div>
+          <span class="status status--go">Gegarandeerd vertrek</span>
+        </div>
+
+        <div class="date-card">
+          <div class="date-card__when">19 apr – 1 mei 2027<small>13-daagse reis</small></div>
+          <div>
+            <h3>Exclusieve gravel expeditie Upper Mustang</h3>
+            <p>Volledige expeditie van Kathmandu naar Lo Manthang en terug.</p>
+          </div>
+          <span class="status">Inschrijving open</span>
+        </div>
+
+        <div class="date-card">
+          <div class="date-card__when">22 – 30 okt 2027<small>9-daagse reis</small></div>
+          <div>
+            <h3>Culturele mountainbike reis rondom de Kathmandu vallei</h3>
+            <p>Prijzen volgen; programma en prijzen bijna gelijk aan die van de reis in 2026.</p>
+          </div>
+          <span class="status">Interesselijst</span>
+        </div>
+
+        <div class="date-card">
+          <div class="date-card__when">10 – 22 apr 2028<small>13-daagse reis</small></div>
+          <div>
+            <h3>Exclusieve gravel expeditie Upper Mustang</h3>
+            <p>Prijzen volgen; programma en prijzen bijna gelijk aan die van de reis in 2027.</p>
+          </div>
+          <span class="status">Interesselijst</span>
+        </div>
+      </div>
+
+      <div class="btn-row"><a class="btn btn--dark" href="#contact">Zet mij op de interesselijst</a></div>
+    </div>
+  </section>
+
+  <!-- CONDITIE -->
+  <section class="section" id="conditie">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Fitheid en conditie</span>
+        <h2>Wat vraagt de reis van je?</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <span class="tag tag--calm">Kathmandu Valley</span>
+          <h3 style="margin-block-start:.8rem">Ontspannen fietsen en genieten</h3>
+          <p>De focus van de reis ligt op ontspannen fietsen en genieten, niet op fysieke grenzen opzoeken — hoewel je je zeker wel echt kunt uitleven als je wil. Tijdens het mountainbiken nemen we ruim de tijd voor pauzes, eet- en drinkmomenten en om foto's te maken.</p>
+          <p>Enige basisconditie is vereist om met plezier de dagelijkse tochten te kunnen volbrengen: één of twee keer per week wielrennen en/of mountainbiken, zo'n 2 tot 3 uur per week, zou voldoende moeten zijn.</p>
+          <p>Je bagage wordt meegenomen door een jeep. Dag 3 is best pittig, maar je kunt in de jeep stappen als het even te lastig wordt. We zijn met meerdere gidsen, waardoor we op sommige delen in losse groepen met een eigen tempo fietsen en elkaar weer treffen bij de volgende stop.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Upper Mustang</span>
+          <h3 style="margin-block-start:.8rem">Stevige basisconditie vereist</h3>
+          <p>Je fietst 7 dagen achter elkaar op grote hoogte — tussen 2.600 en 4.080 meter — over ruige, onverharde trails in één van de meest afgelegen gebieden ter wereld. Je zit dagelijks zo'n 2,5 tot 6 uur actief op de fiets, legt tussen de 30 en 70 km af met 500 tot 1.500 hoogtemeters. De hoogte, de kou, de warmte en het terrein vragen serieuze inspanning van je lichaam.</p>
+          <p>Reken op minimaal twee keer per week actief sporten op een gravelbike, mountainbike of racefiets, met wekelijks minimaal 4 tot 6 uur in het zadel. Wie goed voorbereid is, haalt het maximale uit elke etappe.</p>
+          <p>Dat gezegd: dit is geen race. We nemen ruim de tijd voor pauzes, eet- en drinkmomenten en het maken van foto's. Voor sterke rijders is er volop ruimte om gas te geven op uitdagende klimmen. Je bagage wordt vervoerd per jeep, zodat je licht en vrij op de fiets zit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ERVARINGEN -->
+  <section class="section section--alt" id="ervaringen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Ervaringen van deelnemers</span>
+        <h2>Wat deelnemers zeggen</h2>
+      </div>
+      <div class="quotes">
+        <blockquote class="quote"><p>“Deze reis hoort misschien wel bij de top 5 meest bijzondere ervaringen van mijn leven.”</p><footer><span class="avatar" aria-hidden="true">HB</span> Han Baeten</footer></blockquote>
+        <blockquote class="quote"><p>“Wat een fantastische reis. Hele mooie uitzichten, prachtige natuur en zo'n fijne cultuur en lieve mensen. Heel bijzonder. Tijdens het fietsen ook ruimte om helemaal kapot te gaan. Heerlijk.”</p><footer><span class="avatar" aria-hidden="true">SO</span> Susan Oomen</footer></blockquote>
+        <blockquote class="quote"><p>“Het was top geregeld. Fantastische reisleider en gids. Super vakantie. Dankjewel Michel!”</p><footer><span class="avatar" aria-hidden="true">BD</span> Bernette van Diesen</footer></blockquote>
+        <blockquote class="quote"><p>“Het was geweldig. We hebben heel veel plezier gehad en het was een fantastisch avontuur. Het overtrof mijn verwachtingen. Super.”</p><footer><span class="avatar" aria-hidden="true">BG</span> Blazej Gorzolnik</footer></blockquote>
+        <blockquote class="quote"><p>“Het was zo fantastisch hier. Ik voelde me veilig en er werd heel goed voor me gezorgd. Het overtrof mijn verwachtingen.”</p><footer><span class="avatar" aria-hidden="true">AG</span> Artur Gorzolnik</footer></blockquote>
+        <blockquote class="quote"><p>“Geweldig mooie reis. Echt heel goed verzorgd en geregeld. Nepal stond al heel lang op mijn verlanglijst. Deze reis maakte het toegankelijk om ook echt te gaan. En dat samen met mijn man! Ongelooflijk mooie ervaring.”</p><footer><span class="avatar" aria-hidden="true">MM</span> Martine Mulder</footer></blockquote>
+        <blockquote class="quote"><p>“Bijzondere ervaring. Werelds, heerlijk. Tot in de puntjes verzorgd, perfect. Echt genoten.”</p><footer><span class="avatar" aria-hidden="true">MZ</span> Marco Zieleman</footer></blockquote>
+        <blockquote class="quote"><p>“Een onvergetelijke reis: cultuur, natuur, heerlijk fietsen, schitterende uitzichten op het Himalaya gebergte, prachtige overnachtingsplekken, vriendelijke bevolking. Enorm genoten! En alles top georganiseerd door Michel.”</p><footer><span class="avatar" aria-hidden="true">MM</span> Marga Meeusen</footer></blockquote>
+        <blockquote class="quote"><p>“Zo'n bijzondere ervaring rijker: fietsen door een prachtig Nepal, cultuur beleven, fysieke uitdaging en super goed georganiseerd!”</p><footer><span class="avatar" aria-hidden="true">AM</span> Anja Manders</footer></blockquote>
+        <blockquote class="quote"><p>“Het was kicken, gewoon fantastisch, boven verwachting!”</p><footer><span class="avatar" aria-hidden="true">KP</span> Kata Peltonen</footer></blockquote>
+        <blockquote class="quote"><p>“Een unieke en geweldige ervaring die ik zo weer zou overdoen. De begeleiders waren echt top en er was genoeg ruimte om je eigen tempo te fietsen of helemaal kapot te gaan in deze prachtige omgeving. Verder was alles eromheen perfect georganiseerd. Ik kijk met een heel trots gevoel terug op dit avontuur. Een echte aanrader voor elke MTB'er/avonturier! Namasté”</p><footer><span class="avatar" aria-hidden="true">MM</span> Marek Michalik</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVER -->
+  <section class="section" id="over">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Over</span>
+        <h2>Deze reis wordt georganiseerd door Michel Gebbinck en Marion Werger</h2>
+        <p class="lead">Michel begeleidt deze mountainbikereis. Marion begeleidt de yogareis die parallel plaatsvindt.</p>
+      </div>
+      <div class="people">
+        <div class="person">
+          <div class="person__top">
+            <span class="avatar" aria-hidden="true">M</span>
+            <div><h3>Michel Gebbinck</h3><small>Reisleider mountainbike</small></div>
+          </div>
+          <p>Michel heeft mountainbikereizen gemaakt in Nepal, Spanje, Zwitserland, Oostenrijk, Italië, Frankrijk en Nederland, en hij heeft een jaar in Belize en Peru gewoond.</p>
+          <p>Hij werkt primair als zelfstandig IT-consultant in Nederland en begeleidt daarnaast de Nepalreizen van Marion. Als partner van Marion heeft hij deze mountainbikereizen sinds 2022 ontwikkeld met lokale experts.</p>
+        </div>
+        <div class="person">
+          <div class="person__top">
+            <span class="avatar" aria-hidden="true">M</span>
+            <div><h3>Marion Werger</h3><small>Yogadocent en coach</small></div>
+          </div>
+          <p>Van 2012 tot 2013 heeft Marion een jaar met haar gezin in Nepal gewoond, waar ze werkzaam was als yogadocent en retreats gaf. Met veel vertrouwen en enthousiasme zijn vanuit een samenwerking met een Nepalese travel agency de yogareizen naar Nepal ontstaan. Vele mensen hebben al met haar het prachtige Nepal ervaren.</p>
+          <p>Als coach en yogadocent begeleidt ze mensen in hun innerlijke zoektocht naar rust, balans en kracht, zodat zij zelf gezonde keuzes kunnen maken. Al haar activiteiten bevatten aspecten van doen, voelen, ervaren en “naar binnen keren”. Haar yogalessen zijn een mix tussen in- en ontspanning (yin &amp; yang), met de adem als anker in de beweging.</p>
+        </div>
+      </div>
+      <p style="margin-block-start:1.6rem;color:var(--text-soft);font-size:.95rem">De reizen worden georganiseerd vanuit de organisatie “Marion Werger”; deze bedrijfsnaam vind je dan ook terug in de algemene voorwaarden. Vraag de algemene voorwaarden op via contact.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--alt" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>Mountainbiken in Nepal</h2>
+          <p>Vragen over een reis, de brochure of de interesselijst? Neem gerust contact op met Michel.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="mailto:info@mtbnepal.nl">info@mtbnepal.nl</a>
+            <a class="btn btn--ghost" href="tel:+31627025414">06 27 025 414</a>
+          </div>
+          <div class="social">
+            <a href="https://www.youtube.com/">YouTube — videoserie</a>
+            <a href="https://www.linkedin.com/in/michelgebbinck">LinkedIn</a>
+            <a href="https://www.instagram.com/mtbnepal.nl">Instagram</a>
+            <a href="https://www.facebook.com/mtbnepal.nl">Facebook</a>
+          </div>
+        </div>
+        <div>
+          <dl>
+            <div><dt>Contactpersoon</dt><dd>Michel Gebbinck</dd></div>
+            <div><dt>Telefoon</dt><dd><a href="tel:+31627025414">06 27 025 414</a></dd></div>
+            <div><dt>E-mail</dt><dd><a href="mailto:info@mtbnepal.nl">info@mtbnepal.nl</a></dd></div>
+            <div><dt>Vind ons</dt><dd>Prinses Irenestraat 2<br>7271 GB Borculo</dd></div>
+            <div><dt>KVK</dt><dd>58377921</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>MTB &amp; Gravel Nepal</strong> — volledig verzorgde fietsreizen in Nepal.<br>
+      Mountainbiken Nepal is een product van Marion Werger Nepal Reizen.
+    </div>
+    <div>© 2026 MTB Nepal — Alle rechten voorbehouden</div>
+  </div>
+</footer>
+
+</body>
+</html>
