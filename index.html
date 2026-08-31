@@ -7,265 +7,12 @@
 <title>Fietsreizen in Nepal — MTB &amp; Gravel Nepal</title>
 <meta name="description" content="Volledig verzorgde mountainbike- en gravelreizen in Nepal. Culturele MTB-reis rondom de Kathmandu vallei en de exclusieve gravel expeditie naar Upper Mustang.">
 <meta property="og:title" content="Fietsreizen in Nepal — MTB &amp; Gravel Nepal">
-<meta property="og:description" content="Volledig verzorgde mountainbike- en gravelreizen in Nepal. Van de Kathmandu vallei tot Upper Mustang.">
+<meta property="og:description" content="Volledig verzorgde mountainbike- en gravelreizen in Nepal. Culturele MTB-reis rondom de Kathmandu vallei en de exclusieve gravel expeditie naar Upper Mustang.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
-<style>
-:root{
-  /* Huisstijl: ontleend aan MTB-Nepal-logo-kleur.svg */
-  --orange:#F47216;
-  --orange-deep:#C25508;
-  --green:#37614C;
-  --green-deep:#254435;
-  --cream:#FDE1B9;
-  --cream-soft:#FBF3E6;
-
-  --bg:#FFFDF9;
-  --bg-alt:var(--cream-soft);
-  --bg-deep:var(--green-deep);
-  --surface:#ffffff;
-  --surface-alt:#F6EFE2;
-  --text:#22312A;
-  --text-soft:#5C6B63;
-  --text-invert:#FFF8ED;
-  --text-invert-soft:#D8C9AE;
-  --brand:var(--orange);
-  --brand-deep:var(--orange-deep);
-  --brand-soft:#FCE3CF;
-  --accent:var(--green);
-  --line:#E7DCC8;
-  --line-invert:rgba(253,225,185,.22);
-  --shadow:0 1px 2px rgba(37,68,53,.06), 0 12px 32px -14px rgba(37,68,53,.22);
-  --shadow-lg:0 24px 60px -24px rgba(37,68,53,.45);
-  --radius:18px;
-  --maxw:1140px;
-  --font:"Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#141C18;
-    --bg-alt:#19231E;
-    --bg-deep:#0D140F;
-    --surface:#1D2822;
-    --surface-alt:#243128;
-    --text:#F1EADC;
-    --text-soft:#AFBCB1;
-    --text-invert:#FFF8ED;
-    --text-invert-soft:#D8C9AE;
-    --brand:#FF8A38;
-    --brand-deep:#FF8A38;
-    --brand-soft:#3A2213;
-    --accent:#79B396;
-    --line:#2E3D34;
-    --shadow:0 1px 2px rgba(0,0,0,.45), 0 12px 32px -14px rgba(0,0,0,.7);
-    --shadow-lg:0 24px 60px -24px rgba(0,0,0,.8);
-  }
-}
-
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-block-start:84px}
-body{
-  margin:0;font-family:var(--font);background:var(--bg);color:var(--text);
-  line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased;
-}
-img,svg{max-width:100%;display:block}
-a{color:inherit}
-h1,h2,h3,h4{line-height:1.14;margin:0 0 .5em;letter-spacing:-.02em;font-weight:700}
-h1{font-size:clamp(2.4rem,6vw,4.2rem)}
-h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}
-h3{font-size:1.22rem}
-p{margin:0 0 1.1em}
-.wrap{width:min(100% - 2.5rem,var(--maxw));margin-inline:auto}
-.section{padding-block:clamp(3.5rem,7vw,6.5rem)}
-.section--alt{background:var(--bg-alt)}
-.eyebrow{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin-block-end:.9rem}
-.lead{font-size:1.14rem;color:var(--text-soft);max-width:64ch}
-.section-head{max-width:70ch;margin-block-end:2.6rem}
-
-/* Header */
-.site-header{position:sticky;inset-block-start:0;z-index:50;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(14px);border-block-end:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:1.5rem;min-block-size:72px;position:relative}
-.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-weight:700;letter-spacing:-.02em}
-.brand .mark{inline-size:40px;block-size:44px;flex:none}
-.brand small{display:block;font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-soft);line-height:1.3}
-.nav-links{display:flex;gap:.15rem;margin-inline-start:auto;align-items:center}
-.nav-links a{text-decoration:none;font-size:.94rem;font-weight:600;color:var(--text-soft);padding:.5rem .75rem;border-radius:999px;transition:color .15s,background .15s}
-.nav-links a:hover,.nav-links a:focus-visible{color:var(--text);background:var(--surface-alt)}
-.nav-links a.cta{background:var(--brand);color:#fff;padding-inline:1.15rem}
-.nav-links a.cta:hover{background:var(--brand-deep);color:#fff}
-.nav-toggle,.nav-toggle-label{display:none}
-@media (max-width:960px){
-  .nav-toggle-label{display:grid;place-items:center;margin-inline-start:auto;inline-size:44px;block-size:44px;border-radius:12px;cursor:pointer;border:1px solid var(--line);background:var(--surface)}
-  .nav-toggle-label span{display:block;inline-size:20px;block-size:2px;background:var(--text);position:relative}
-  .nav-toggle-label span::before,.nav-toggle-label span::after{content:"";position:absolute;inset-inline-start:0;inline-size:20px;block-size:2px;background:var(--text)}
-  .nav-toggle-label span::before{inset-block-start:-6px}
-  .nav-toggle-label span::after{inset-block-start:6px}
-  .nav-links{position:absolute;inset-inline:0;inset-block-start:100%;flex-direction:column;align-items:stretch;gap:.15rem;background:var(--bg);border-block-end:1px solid var(--line);padding:.8rem 0 1.4rem;box-shadow:var(--shadow);display:none}
-  .nav-toggle:checked ~ .nav-links{display:flex}
-  .nav-toggle:checked ~ .nav-toggle-label span{background:transparent}
-  .nav-toggle:checked ~ .nav-toggle-label span::before{inset-block-start:0;transform:rotate(45deg)}
-  .nav-toggle:checked ~ .nav-toggle-label span::after{inset-block-start:0;transform:rotate(-45deg)}
-  .nav-links a{padding:.75rem .9rem;font-size:1rem}
-  .nav-links a.cta{text-align:center;margin-block-start:.4rem}
-}
-
-/* Hero */
-.hero{position:relative;overflow:hidden;color:var(--text-invert);isolation:isolate}
-.hero__bg{position:absolute;inset:0;z-index:-2;object-fit:cover;inline-size:100%;block-size:100%}
-.hero::after{
-  content:"";position:absolute;inset:0;z-index:-1;
-  background:
-    linear-gradient(180deg,rgba(37,68,53,.62) 0%,rgba(37,68,53,.72) 45%,rgba(13,20,15,.94) 100%),
-    radial-gradient(90% 70% at 82% 12%,rgba(244,114,22,.42),transparent 60%);
-}
-.hero__inner{padding-block:clamp(4.5rem,11vw,8rem) clamp(8rem,15vw,12rem);position:relative}
-.hero h1{max-width:16ch;margin-block-end:1.1rem;text-shadow:0 2px 24px rgba(0,0,0,.35)}
-.hero h1 em{font-style:normal;color:var(--cream);display:block}
-.hero p{color:var(--text-invert-soft);font-size:1.2rem;max-width:56ch}
-.hero__badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-block-end:1.6rem}
-.badge{display:inline-flex;align-items:center;gap:.45rem;font-size:.8rem;font-weight:600;padding:.4rem .85rem;border-radius:999px;border:1px solid var(--line-invert);background:rgba(0,0,0,.28);color:var(--text-invert)}
-.badge.is-live{background:rgba(244,114,22,.34);border-color:rgba(244,114,22,.6)}
-.dot{inline-size:7px;block-size:7px;border-radius:50%;background:var(--cream);flex:none}
-.btn-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-block-start:2rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-weight:650;font-size:1rem;padding:.85rem 1.5rem;border-radius:999px;transition:transform .15s,background .15s,border-color .15s;border:1px solid transparent}
-.btn:hover{transform:translateY(-2px)}
-.btn--primary{background:var(--brand);color:#fff}
-.btn--primary:hover{background:var(--brand-deep)}
-.btn--ghost{border-color:var(--line-invert);color:var(--text-invert);background:rgba(0,0,0,.25)}
-.btn--dark{background:var(--green);color:var(--cream)}
-.btn--dark:hover{background:var(--green-deep);color:var(--cream)}
-
-.hero__stats{position:relative;z-index:3;margin-block-start:-4.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
-.hero__stats div{background:var(--surface);padding:1.35rem 1.5rem}
-.hero__stats strong{display:block;font-size:1.85rem;letter-spacing:-.03em;line-height:1.1;color:var(--green)}
-.hero__stats span{font-size:.85rem;color:var(--text-soft)}
-@media (prefers-color-scheme: dark){.hero__stats strong{color:var(--brand)}}
-
-/* Reizen */
-.trip{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
-.trip + .trip{margin-block-start:clamp(3rem,6vw,5rem);padding-block-start:clamp(3rem,6vw,5rem);border-block-start:1px solid var(--line)}
-.trip__visual{margin:0;border-radius:var(--radius);overflow:hidden;position:sticky;inset-block-start:96px;box-shadow:var(--shadow);border:1px solid var(--line);background:var(--surface)}
-.trip__visual figcaption{padding:.85rem 1.1rem;font-size:.85rem;color:var(--text-soft)}
-.trip__media{position:sticky;inset-block-start:96px;display:grid;gap:1rem}
-.trip__media figure{margin:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:var(--surface)}
-.trip__media figcaption{padding:.75rem 1.1rem;font-size:.85rem;color:var(--text-soft)}
-.frame{position:relative;background:#000}
-.frame::before{content:"";display:block;padding-block-end:56.25%}
-.frame--tall::before{padding-block-end:177.78%}
-.trip__media--short figure{max-inline-size:340px;margin-inline:auto}
-.trip__media--stack{position:static}
-.frame iframe{position:absolute;inset:0;inline-size:100%;block-size:100%;border:0}
-.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px;background:var(--brand-soft);color:var(--brand-deep)}
-.tag--calm{background:color-mix(in srgb,var(--green) 16%,transparent);color:var(--green)}
-@media (prefers-color-scheme: dark){.tag{color:#FFB37A}.tag--calm{color:var(--accent)}}
-.checks{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.9rem}
-.checks li{display:grid;grid-template-columns:26px 1fr;gap:.8rem;align-items:start}
-.checks li::before{content:"";inline-size:20px;block-size:20px;margin-block-start:.28rem;border-radius:50%;background:var(--brand-soft);box-shadow:inset 0 0 0 3px var(--brand)}
-.checks strong{display:block}
-.checks span{color:var(--text-soft);font-size:.97rem}
-
-/* Band */
-.band{position:relative;min-block-size:320px;display:grid;place-items:center;overflow:hidden;isolation:isolate;text-align:center;color:var(--text-invert);padding-block:clamp(3rem,7vw,5rem)}
-.band img{position:absolute;inset:0;z-index:-2;inline-size:100%;block-size:100%;object-fit:cover}
-.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(37,68,53,.72),rgba(13,20,15,.8))}
-.band blockquote{margin:0;max-width:38ch;font-size:clamp(1.3rem,2.6vw,2rem);font-weight:600;line-height:1.35;letter-spacing:-.02em}
-.band cite{display:block;margin-block-start:1rem;font-style:normal;font-size:.95rem;color:var(--text-invert-soft)}
-
-/* Kaarten */
-.grid{display:grid;gap:1.25rem}
-.grid--2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;box-shadow:var(--shadow)}
-.card h3{margin-block-end:.4rem}
-.card p:last-child{margin-block-end:0}
-
-/* Data */
-.dates{display:grid;gap:1rem}
-.date-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1.4rem;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem 1.6rem;box-shadow:var(--shadow);border-inline-start:4px solid var(--brand)}
-.date-card--calm{border-inline-start-color:var(--green)}
-.date-card__when{min-inline-size:170px;font-weight:700}
-.date-card__when small{display:block;font-weight:600;color:var(--text-soft)}
-.date-card h3{margin:0;font-size:1.05rem}
-.date-card p{margin:.2rem 0 0;color:var(--text-soft);font-size:.93rem}
-.status{white-space:nowrap;font-size:.78rem;font-weight:700;padding:.35rem .8rem;border-radius:999px;background:var(--surface-alt);color:var(--text-soft)}
-.status--go{background:color-mix(in srgb,var(--green) 16%,transparent);color:var(--green)}
-@media (prefers-color-scheme: dark){.status--go{color:var(--accent)}}
-@media (max-width:760px){
-  .date-card{grid-template-columns:1fr;gap:.6rem}
-  .trip{grid-template-columns:1fr}
-  .trip__visual,.trip__media{position:static}
-  .trip__media--short figure{max-inline-size:300px}
-}
-
-/* Video */
-.videos{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1.75rem;align-items:start}
-@media (max-width:860px){.videos{grid-template-columns:1fr}}
-.player{position:relative;padding-block-end:56.25%;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--line);background:#000}
-.player iframe{position:absolute;inset:0;inline-size:100%;block-size:100%;border:0}
-.playlist{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
-.playlist li + li{border-block-start:1px solid var(--line)}
-.playlist a{display:flex;gap:.8rem;align-items:baseline;padding:.75rem 1.1rem;text-decoration:none;font-size:.95rem;transition:background .15s}
-.playlist a:hover{background:var(--surface-alt)}
-.playlist .num{color:var(--brand);font-weight:700;font-size:.8rem;flex:none;min-inline-size:1.4rem}
-.playlist .dur{margin-inline-start:auto;color:var(--text-soft);font-size:.82rem;flex:none}
-
-/* Fotoalbum */
-.album{columns:4 220px;column-gap:1rem}
-.album figure{break-inside:avoid;margin:0 0 1rem}
-.album img{inline-size:100%;border-radius:14px;box-shadow:var(--shadow);border:1px solid var(--line)}
-
-/* Quotes */
-.quotes{columns:3 280px;column-gap:1.25rem}
-.quote{break-inside:avoid;margin:0 0 1.25rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem 1.5rem;box-shadow:var(--shadow)}
-.quote p{font-size:1rem;margin-block-end:.9rem}
-.quote footer{display:flex;align-items:center;gap:.65rem;font-size:.88rem;color:var(--text-soft)}
-.avatar{inline-size:32px;block-size:32px;border-radius:50%;flex:none;display:grid;place-items:center;font-size:.78rem;font-weight:700;color:var(--cream);background:var(--green)}
-
-/* Over */
-.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
-.person{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem;box-shadow:var(--shadow)}
-.person__top{display:flex;align-items:center;gap:1rem;margin-block-end:1rem}
-.person__top img{inline-size:64px;block-size:64px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--cream)}
-.person__top h3{margin:0}
-.person__top small{color:var(--text-soft)}
-
-/* Contact */
-.contact{background:var(--bg-deep);color:var(--text-invert);border-radius:calc(var(--radius) + 6px);padding:clamp(2rem,5vw,3.5rem);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem}
-.contact h2{color:var(--text-invert)}
-.contact p{color:var(--text-invert-soft)}
-.contact .eyebrow{color:var(--cream)}
-.contact a{color:var(--text-invert);text-decoration:none;border-block-end:1px solid rgba(253,225,185,.35)}
-.contact a:hover{border-color:var(--brand)}
-.contact dl{margin:0;display:grid;gap:1rem}
-.contact dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-invert-soft);font-weight:700}
-.contact dd{margin:.15rem 0 0;font-size:1.05rem}
-.social{display:flex;flex-wrap:wrap;gap:.5rem;margin-block-start:1.4rem}
-.social a{border:1px solid var(--line-invert);border-radius:999px;padding:.4rem .9rem;font-size:.85rem;font-weight:600;background:rgba(253,225,185,.08)}
-
-/* Footer */
-.site-footer{border-block-start:1px solid var(--line);padding-block:2.5rem;font-size:.9rem;color:var(--text-soft)}
-.site-footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
-
-@media print{
-  .site-header,.btn-row,.social,.player,.band,.frame{display:none}
-  body{background:#fff;color:#000;font-size:11pt}
-  .hero{color:#000}
-  .hero__bg,.hero::after{display:none}
-  .hero h1,.hero h1 em{color:#000;text-shadow:none}
-  .hero p,.contact p{color:#333}
-  .contact{background:#fff;color:#000;border:1px solid #999}
-  .contact h2,.contact dd,.contact a,.contact .eyebrow{color:#000}
-  .card,.quote,.date-card,.person{break-inside:avoid;box-shadow:none;border:1px solid #ccc}
-  .quotes{columns:2}.album{columns:3}
-  .hero__stats{margin-block-start:1rem;box-shadow:none}
-  .trip__visual,.trip__media{position:static}
-  .trip__media figure{box-shadow:none;border:1px solid #ccc}
-  a{text-decoration:none}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header class="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Hoofdnavigatie">
@@ -288,6 +35,7 @@ p{margin:0 0 1.1em}
     </nav>
   </div>
 </header>
+
 
 <main id="top">
 
@@ -353,7 +101,7 @@ p{margin:0 0 1.1em}
             <li><span><strong>Pashupatinath</strong><span>Het belangrijkste Hindoe tempelcomplex van Nepal, met tempeloffers, Saddhu's en crematies aan de oever van de rivier.</span></span></li>
           </ul>
           <p style="margin-block-start:1.4rem;color:var(--text-soft)">De reis begint en eindigt met cultuur in Kathmandu, samen met de yogagroep. Als je wil kun je meedoen met de yoga- en meditatiesessies — ook als je daar nog niet bekend mee bent is dat een mooie aanvulling en ondersteuning voor het mountainbiken. Maar alleen mountainbiken met Michel kan natuurlijk ook prima.</p>
-          <div class="btn-row"><a class="btn btn--primary" href="#data">Programma en prijzen</a></div>
+          <div class="btn-row"><a class="btn btn--primary" href="kathmandu-vallei.html">Programma en prijzen</a></div>
         </div>
       </article>
 
@@ -398,7 +146,7 @@ p{margin:0 0 1.1em}
             <li><span><strong>Verblijf dat past bij de tocht</strong><span>Van het legendarische Kathmandu Guest House, de vulkanische hotsprings van Tatopani en het comfortabele Pokhara Village Resort tot eenvoudige, authentieke teahouses diep in de Mustang. Je slaapt waar de legends en de locals slapen. Dat is de bedoeling.</span></span></li>
             <li><span><strong>Lokale expertise op alle fronten</strong><span>Ervaren Nepalese gidsen die elk pad kennen, mechanische ondersteuning onderweg en Michel Gebbinck als reisleider. Jij rijdt. Wij regelen de rest.</span></span></li>
           </ul>
-          <div class="btn-row"><a class="btn btn--primary" href="#data">Programma en prijzen</a></div>
+          <div class="btn-row"><a class="btn btn--primary" href="upper-mustang.html">Programma en prijzen</a></div>
         </div>
       </article>
     </div>
@@ -420,13 +168,13 @@ p{margin:0 0 1.1em}
       <div class="section-head">
         <span class="eyebrow">Data &amp; prijzen</span>
         <h2>Wanneer ga je mee?</h2>
-        <p class="lead">Steeds meer mensen plannen hun reis lang van tevoren. Wil je op de interesselijst voor een van de reizen? Laat het ons weten — dan ontvang je als eerste info. Alle details van de reizen vind je in de brochures; vraag ze op via contact.</p>
+        <p class="lead">Steeds meer mensen plannen hun reis lang van tevoren. Wil je op de interesselijst voor een van de reizen? Laat het ons weten — dan ontvang je als eerste info. Klik op een reis hieronder voor het volledige dagprogramma en de kosten.</p>
       </div>
       <div class="dates">
         <div class="date-card date-card--calm">
           <div class="date-card__when">19 – 28 nov 2026<small>10-daagse reis</small></div>
           <div>
-            <h3>Culturele mountainbike reis rondom de Kathmandu vallei</h3>
+            <h3><a href="kathmandu-vallei.html">Culturele mountainbike reis rondom de Kathmandu vallei</a></h3>
             <p>Minimumaantal deelnemers is bereikt.</p>
           </div>
           <span class="status status--go">Gegarandeerd vertrek</span>
@@ -434,7 +182,7 @@ p{margin:0 0 1.1em}
         <div class="date-card">
           <div class="date-card__when">19 apr – 1 mei 2027<small>13-daagse reis</small></div>
           <div>
-            <h3>Exclusieve gravel expeditie Upper Mustang</h3>
+            <h3><a href="upper-mustang.html">Exclusieve gravel expeditie Upper Mustang</a></h3>
             <p>Volledige expeditie van Kathmandu naar Lo Manthang en terug.</p>
           </div>
           <span class="status">Inschrijving open</span>
@@ -442,7 +190,7 @@ p{margin:0 0 1.1em}
         <div class="date-card date-card--calm">
           <div class="date-card__when">22 – 30 okt 2027<small>9-daagse reis</small></div>
           <div>
-            <h3>Culturele mountainbike reis rondom de Kathmandu vallei</h3>
+            <h3><a href="kathmandu-vallei.html">Culturele mountainbike reis rondom de Kathmandu vallei</a></h3>
             <p>Prijzen volgen; programma en prijzen bijna gelijk aan die van de reis in 2026.</p>
           </div>
           <span class="status">Interesselijst</span>
@@ -450,7 +198,7 @@ p{margin:0 0 1.1em}
         <div class="date-card">
           <div class="date-card__when">10 – 22 apr 2028<small>13-daagse reis</small></div>
           <div>
-            <h3>Exclusieve gravel expeditie Upper Mustang</h3>
+            <h3><a href="upper-mustang.html">Exclusieve gravel expeditie Upper Mustang</a></h3>
             <p>Prijzen volgen; programma en prijzen bijna gelijk aan die van de reis in 2027.</p>
           </div>
           <span class="status">Interesselijst</span>
@@ -639,7 +387,6 @@ p{margin:0 0 1.1em}
     <div>© 2026 MTB Nepal — Alle rechten voorbehouden</div>
   </div>
 </footer>
-
 <script>
 (function () {
   var toggle = document.getElementById('nav-toggle');
@@ -668,6 +415,5 @@ p{margin:0 0 1.1em}
   });
 })();
 </script>
-
 </body>
 </html>
