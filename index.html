@@ -24,22 +24,6 @@
       <label class="nav-toggle-label" for="nav-toggle" role="button" tabindex="0" aria-label="Menu openen of sluiten"><span></span></label>
       <div class="nav-links">
         <a href="#reizen">Reizen</a>
-        <div class="has-sub">
-          <button type="button" class="sub-toggle" aria-expanded="false" aria-controls="submenu-programma">
-            Programma en prijzen
-            <svg class="caret" width="10" height="7" viewBox="0 0 10 7" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="submenu" id="submenu-programma">
-            <a href="kathmandu-vallei.html">
-              <strong>Culturele Mountainbike Reis</strong>
-              <small>Kathmandu vallei · 19 – 28 nov 2026</small>
-            </a>
-            <a href="upper-mustang.html">
-              <strong>Exclusieve Gravel Expeditie</strong>
-              <small>Upper Mustang · 19 apr – 1 mei 2027</small>
-            </a>
-          </div>
-        </div>
         <a href="#data">Data</a>
         <a href="#conditie">Fitheid</a>
         <a href="#videos">Video's</a>
@@ -95,7 +79,7 @@
           <figure>
             <div class="frame frame--tall">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/rChO2ek9Luo"
+                src="https://www.youtube-nocookie.com/embed/rChO2ek9Luo?autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=rChO2ek9Luo&amp;rel=0&amp;modestbranding=1"
                 title="Ga mee op Cultuur en Mountainbike Reis in Nepal"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -126,7 +110,7 @@
           <figure>
             <div class="frame">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/dAoAfMNIM5E"
+                src="https://www.youtube-nocookie.com/embed/dAoAfMNIM5E?autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=dAoAfMNIM5E&amp;rel=0&amp;modestbranding=1"
                 title="Gravel biking in Upper Mustang, Nepal — deel 1"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -138,7 +122,7 @@
           <figure>
             <div class="frame">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/ZRoMkhB-InQ"
+                src="https://www.youtube-nocookie.com/embed/ZRoMkhB-InQ?autoplay=1&amp;mute=1&amp;playsinline=1&amp;loop=1&amp;playlist=ZRoMkhB-InQ&amp;rel=0&amp;modestbranding=1"
                 title="Gravel biking in Upper Mustang, Nepal — deel 2"
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -261,7 +245,7 @@
       <div class="videos">
         <div class="player">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/videoseries?list=PLqtIkDXtgbHoWTdd78sfOBwMpc2Qba-na"
+            src="https://www.youtube-nocookie.com/embed/videoseries?list=PLqtIkDXtgbHoWTdd78sfOBwMpc2Qba-na&amp;autoplay=1&amp;mute=1&amp;playsinline=1&amp;rel=0&amp;modestbranding=1"
             title="Mountainbiken in Nepal — videoserie"
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -409,46 +393,27 @@
   var nav = document.querySelector('.nav');
   if (!toggle || !nav) return;
 
-  var subToggles = Array.prototype.slice.call(nav.querySelectorAll('.sub-toggle'));
-
-  function closeSubs() {
-    subToggles.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
-  }
-
-  function closeMenu() {
-    toggle.checked = false;
-    closeSubs();
-  }
+  function close() { toggle.checked = false; }
 
   nav.addEventListener('click', function (e) {
-    var sub = e.target.closest('.sub-toggle');
-    if (sub) {
-      e.preventDefault();
-      var open = sub.getAttribute('aria-expanded') === 'true';
-      closeSubs();
-      sub.setAttribute('aria-expanded', open ? 'false' : 'true');
-      return;
-    }
-    if (e.target.closest('.nav-links a')) closeMenu();
+    if (e.target.closest('.nav-links a')) close();
   });
 
   document.addEventListener('click', function (e) {
-    if (!nav.contains(e.target)) closeMenu();
+    if (toggle.checked && !nav.contains(e.target)) close();
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeMenu();
+    if (e.key === 'Escape') close();
   });
 
   document.querySelector('.nav-toggle-label').addEventListener('keydown', function (e) {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       toggle.checked = !toggle.checked;
-      if (!toggle.checked) closeSubs();
     }
   });
 })();
 </script>
-
 </body>
 </html>
