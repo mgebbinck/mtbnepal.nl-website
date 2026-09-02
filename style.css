@@ -310,6 +310,36 @@ p{margin:0 0 1.1em}
   .chip--stay{color:var(--accent)}
 }
 
+
+/* Foto's binnen een dagkaart */
+.day__photos{
+  display:grid;gap:.6rem;padding:0 1.6rem 1.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+}
+.day__photos figure{margin:0}
+.day__photos img{
+  inline-size:100%;aspect-ratio:4/3;object-fit:cover;
+  border-radius:12px;border:1px solid var(--line);background:var(--surface-alt);
+}
+.day__photos figcaption{
+  font-size:.8rem;color:var(--text-soft);margin-block-start:.4rem;line-height:1.4;
+}
+
+/* Videoblok op een reispagina */
+.trip-videos{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.trip-videos figure{
+  margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);
+}
+.trip-videos figcaption{padding:.8rem 1.1rem;font-size:.88rem;color:var(--text-soft)}
+.trip-videos--short{grid-template-columns:minmax(0,340px)}
+
+@media print{
+  .day__photos{grid-template-columns:repeat(3,1fr)}
+  .day__photos img{border:1px solid #ccc}
+  .trip-videos{display:none}
+}
+
 /* Kosten */
 .price-head{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:baseline;
   padding:1.6rem 1.8rem;background:var(--green);color:var(--cream);border-radius:var(--radius);
