@@ -149,6 +149,9 @@ p{margin:0 0 1.1em}
 .btn--primary{background:var(--brand);color:#fff}
 .btn--primary:hover{background:var(--brand-deep)}
 .btn--ghost{border-color:var(--line-invert);color:var(--text-invert);background:rgba(0,0,0,.25)}
+.btn--whatsapp{background:#25D366;color:#0B2E13}
+.btn--whatsapp:hover{background:#1FB855;color:#0B2E13}
+.btn .ico{flex:none}
 .btn--dark{background:var(--green);color:var(--cream)}
 .btn--dark:hover{background:var(--green-deep);color:var(--cream)}
 
@@ -251,6 +254,8 @@ p{margin:0 0 1.1em}
 .contact p{color:var(--text-invert-soft)}
 .contact .eyebrow{color:var(--cream)}
 .contact a{color:var(--text-invert);text-decoration:none;border-block-end:1px solid rgba(253,225,185,.35)}
+.contact .btn{border-block-end:0}
+.contact .btn--whatsapp{color:#0B2E13}
 .contact a:hover{border-color:var(--brand)}
 .contact dl{margin:0;display:grid;gap:1rem}
 .contact dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-invert-soft);font-weight:700}
@@ -261,6 +266,34 @@ p{margin:0 0 1.1em}
 /* Footer */
 .site-footer{border-block-start:1px solid var(--line);padding-block:2.5rem;font-size:.9rem;color:var(--text-soft)}
 .site-footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+
+
+/* Zwevende WhatsApp-knop, altijd bereikbaar */
+.wa-float{
+  position:fixed;inset-block-end:1.25rem;inset-inline-end:1.25rem;z-index:80;
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.85rem 1.15rem;border-radius:999px;text-decoration:none;
+  background:#25D366;color:#0B2E13;font-weight:650;font-size:.95rem;
+  box-shadow:0 6px 24px -6px rgba(11,46,19,.5), 0 2px 6px rgba(0,0,0,.18);
+  transition:transform .16s, box-shadow .16s, background .16s;
+}
+.wa-float:hover,.wa-float:focus-visible{
+  background:#1FB855;color:#0B2E13;transform:translateY(-2px);
+  box-shadow:0 10px 30px -8px rgba(11,46,19,.55), 0 2px 8px rgba(0,0,0,.2);
+}
+.wa-float svg{flex:none}
+
+/* Op smalle schermen alleen het icoon, zodat er niets wordt afgedekt */
+@media (max-width:600px){
+  .wa-float{inset-block-end:1rem;inset-inline-end:1rem;padding:.85rem;border-radius:50%}
+  .wa-float__label{
+    position:absolute;inline-size:1px;block-size:1px;overflow:hidden;
+    clip-path:inset(50%);white-space:nowrap;
+  }
+}
+
+@media print{.wa-float{display:none}}
+@media (prefers-reduced-motion:reduce){.wa-float:hover{transform:none}}
 
 @media print{
   .site-header,.btn-row,.social,.player,.band,.frame{display:none}
