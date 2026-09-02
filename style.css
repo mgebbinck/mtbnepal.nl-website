@@ -178,6 +178,10 @@ p{margin:0 0 1.1em}
 .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px;background:var(--brand-soft);color:var(--brand-deep)}
 .tag--calm{background:color-mix(in srgb,var(--green) 16%,transparent);color:var(--green)}
 @media (prefers-color-scheme: dark){.tag{color:#FFB37A}.tag--calm{color:var(--accent)}}
+/* Op de donkere kopfoto krijgen beide labels een dekkende achtergrond,
+   zodat ze even goed leesbaar zijn */
+.page-hero .tag{background:#FCE3CF;color:#A63D1A}
+.page-hero .tag--calm{background:#D9E7DF;color:#254435}
 .checks{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.9rem}
 .checks li{display:grid;grid-template-columns:26px 1fr;gap:.8rem;align-items:start}
 .checks li::before{content:"";inline-size:20px;block-size:20px;margin-block-start:.28rem;border-radius:50%;background:var(--brand-soft);box-shadow:inset 0 0 0 3px var(--brand)}
