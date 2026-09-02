@@ -97,6 +97,35 @@ p{margin:0 0 1.1em}
 }
 
 
+
+/* "Reizen" met twee sub-items — zelfde stijl als de overige menu-items */
+.has-sub{position:relative;display:flex}
+.nav-links .has-sub > a{display:inline-flex;align-items:center;gap:.35rem}
+.caret{flex:none;opacity:.7;transition:transform .18s}
+.has-sub:hover > a .caret,.has-sub:focus-within > a .caret{transform:rotate(180deg)}
+.submenu{
+  position:absolute;inset-block-start:calc(100% + .45rem);inset-inline-start:0;z-index:60;
+  display:none;flex-direction:column;gap:.1rem;min-inline-size:190px;padding:.35rem;
+  background:var(--bg);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);
+}
+.submenu::before{content:"";position:absolute;inset-block-start:-.45rem;inset-inline:0;block-size:.45rem}
+.has-sub:hover > .submenu,.has-sub:focus-within > .submenu{display:flex}
+.nav-links .submenu a{border-radius:10px;white-space:nowrap}
+
+@media (max-width:960px){
+  .has-sub{display:block}
+  .nav-links .has-sub > a{display:flex}
+  .caret{display:none}
+  .submenu{
+    position:static;display:flex;min-inline-size:0;padding:0;gap:0;
+    background:none;border:0;border-radius:0;box-shadow:none;
+  }
+  .submenu::before{display:none}
+  .nav-links .submenu a{
+    padding-inline-start:2rem;border-radius:0;font-size:.95rem;color:var(--text-soft);
+  }
+}
+
 /* Hero */
 .hero{position:relative;overflow:hidden;color:var(--text-invert);isolation:isolate}
 .hero__bg{position:absolute;inset:0;z-index:-2;object-fit:cover;inline-size:100%;block-size:100%}
