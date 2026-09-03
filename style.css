@@ -407,6 +407,55 @@ p{margin:0 0 1.1em}
   .trip-videos{display:none}
 }
 
+
+/* Twee video's naast elkaar, ongeacht staand of liggend */
+.trip-videos--duo{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start}
+
+/* Klik-om-te-laden: pas na een klik wordt YouTube geladen */
+.vplay{
+  display:block;inline-size:100%;padding:0;margin:0;border:0;cursor:pointer;
+  position:relative;background:#0D140F;overflow:hidden;
+  font:inherit;color:inherit;text-align:start;
+}
+.vplay img{
+  inline-size:100%;block-size:auto;aspect-ratio:16/9;object-fit:cover;display:block;
+  transition:transform .3s, filter .2s;filter:brightness(.88);
+}
+.vplay--tall img{aspect-ratio:9/16}
+.vplay:hover img,.vplay:focus-visible img{transform:scale(1.03);filter:brightness(1)}
+.vplay__btn{
+  position:absolute;inset-block-start:50%;inset-inline-start:50%;
+  transform:translate(-50%,-50%);display:grid;place-items:center;
+  transition:transform .2s;pointer-events:none;
+}
+.vplay:hover .vplay__btn{transform:translate(-50%,-50%) scale(1.08)}
+.vplay__icon{filter:drop-shadow(0 3px 10px rgba(0,0,0,.45))}
+.vplay__note{
+  position:absolute;inset-inline:0;inset-block-end:0;
+  padding:.55rem .8rem;font-size:.74rem;line-height:1.35;
+  color:#F1EADC;background:linear-gradient(transparent,rgba(13,20,15,.86) 45%);
+  text-align:center;
+}
+.vplay__note a{color:#FFC08A;text-decoration:underline}
+.vplay iframe{inline-size:100%;aspect-ratio:16/9;border:0;display:block}
+.vplay--tall iframe{aspect-ratio:9/16}
+
+@media print{.vplay{display:none}}
+@media (prefers-reduced-motion:reduce){
+  .vplay img,.vplay__btn{transition:none}
+  .vplay:hover img{transform:none}
+}
+
+
+/* Tekstpagina (privacyverklaring) */
+.prose h2{font-size:1.35rem;margin-block:2.2rem .7rem;padding-block-start:1.4rem;border-block-start:1px solid var(--line)}
+.prose h2:first-of-type{border-block-start:0;padding-block-start:0;margin-block-start:1.6rem}
+.prose h3{font-size:1.05rem;margin-block:1.4rem .4rem;color:var(--brand-deep)}
+.prose p,.prose li{color:var(--text)}
+.prose ul{margin:0 0 1.1em;padding-inline-start:1.1rem;display:grid;gap:.5rem}
+.prose a{color:var(--brand-deep);text-decoration:underline;text-underline-offset:2px}
+@media (prefers-color-scheme: dark){.prose h3,.prose a{color:var(--brand)}}
+
 /* Kosten */
 .price-head{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:baseline;
   padding:1.6rem 1.8rem;background:var(--green);color:var(--cream);border-radius:var(--radius);
